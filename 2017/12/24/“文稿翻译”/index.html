@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>文稿翻译 | 郑所谓</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="本文应 数字尾巴 之邀，翻译自文章 「Fused Video Stabilization on the Pixel 2 and Pixel 2 XL」">
+<meta property="og:type" content="article">
+<meta property="og:title" content="文稿翻译">
+<meta property="og:url" content="http://example.com/2017/12/24/%E2%80%9C%E6%96%87%E7%A8%BF%E7%BF%BB%E8%AF%91%E2%80%9D/index.html">
+<meta property="og:site_name" content="郑所谓">
+<meta property="og:description" content="本文应 数字尾巴 之邀，翻译自文章 「Fused Video Stabilization on the Pixel 2 and Pixel 2 XL」">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2017-12-24T14:12:17.000Z">
+<meta property="article:modified_time" content="2017-12-24T14:17:19.000Z">
+<meta property="article:author" content="Sizher">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="郑所谓" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">郑所谓</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-“文稿翻译”" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2017/12/24/%E2%80%9C%E6%96%87%E7%A8%BF%E7%BF%BB%E8%AF%91%E2%80%9D/" class="article-date">
+  <time class="dt-published" datetime="2017-12-24T14:12:17.000Z" itemprop="datePublished">2017-12-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      文稿翻译
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><em>本文应 <a target="_blank" rel="noopener" href="http://www.dgtle.com/">数字尾巴</a> 之邀，翻译自文章 「<a target="_blank" rel="noopener" href="https://research.googleblog.com/2017/11/fused-video-stabilization-on-pixel-2.html?m=1">Fused Video Stabilization on the Pixel 2 and Pixel 2 XL</a>」</em></p>
+<a id="more"></a>
+<blockquote>
+<p>One of the most important aspects of current smartphones is easily capturing and sharing videos. With the Pixel 2 and Pixel 2 XL smartphones, the videos you capture are smoother and clearer than ever before, thanks to our Fused Video Stabilization technique based on both optical image stabilization (OIS) and electronic image stabilization (EIS). Fused Video Stabilization delivers highly stable footage with minimal artifacts, and the Pixel 2 is currently rated as the leader in DxO’s video ranking (also earning the highest overall rating for a smartphone camera). But how does it work?</p>
+</blockquote>
+<p>当下智能手机最重要的一个使用部分，既是更容易的拍摄和分享视频。在最新的 Pixel 2 和 Pixel 2 XL 上，视频捕捉录制将比以往更加顺滑流畅，这得益于其采用了基于光学防抖（OIS）和电子防抖（EIS）的混合防抖技术。该技术仅需最不起眼的元器件，便能提供高度稳定的成片效果，而且 Pixel 2 目前领跑 DxO 的智能手机摄像排行（同时也拿下了该榜单的历史最高分）。那么，这项技术是如何运作的呢？</p>
+<blockquote>
+<p>A key principle in videography is keeping the camera motion smooth and steady. A stable video is free of the distraction, so the viewer can focus on the subject of interest. But, videos taken with smartphones are subject to many conditions that make taking a high-quality video a significant challenge:</p>
+</blockquote>
+<p>镜头运动的平顺与稳定是摄像的一个关键性原则，一个成像稳定的视频可避免因画面抖动带来的观看干扰，这样观者便可专注于他们感兴趣的主题。但是，智能手机摄像受限于诸多条件，这使得拍摄高质量视频成为一个不小的挑战：</p>
+<blockquote>
+<p><strong>Camera Shake</strong><br>Most people hold their mobile phones in their hands to record videos - you pull the phone from your pocket, record the video, and the video is ready to share right after recording. However, that means your videos shake as much as your hands do – and they shake a lot! Moreover, if you are walking or running while recording, the camera motion can make videos almost unwatchable: </p>
+</blockquote>
+<p><strong>镜头抖动</strong></p>
+<p>许多人握持手机拍摄视频，拽出手机、录制视频、旋即分享。但是，所录视频会伴随手的抖动——它会抖动得更厉害。此外，如果你在走动或跑动时录制，运动的镜头会让视频很难说得上可以观看：</p>
+<p>&lt;视频&gt;</p>
+<blockquote>
+<p><strong>Motion Blur</strong><br>If the camera or the subject moves during exposure, the resulting photo or video will appear blurry. Even if we stabilize the motion in between consecutive frames, the motion blur in each individual frame cannot be easily restored in practice, especially on a mobile device. One typical video artifact due to motion blur is sharpness inconsistency: the video may rapidly alternate between blurry and sharp, which is very distracting even after the video is stabilized:</p>
+</blockquote>
+<p><strong>运动模糊</strong></p>
+<p>如果拍摄设备或被拍物体在镜头曝光的过程中产生了移动，那么成片的照片或视频将会出现模糊。即便我们在连续拍摄时保持了稳定，但在实际操作中，尤其是在移动设备上，定格在每一帧的运动模糊都是不易恢复的。由运动模糊引起的一个典型的视频画面问题就是清晰度不一致：画面可能在模糊和清晰之间快速交替，即使在视频稳定后，也同样会让人分心：</p>
+<p>&lt;视频&gt;</p>
+<blockquote>
+<p><strong>Rolling Shutter</strong><br>The CMOS image sensor collects one row of pixels, or “scanline”, at a time, and it takes tens of milliseconds to go from the top scanline to the bottom. Therefore, anything moving during this period can appear distorted. This is called the rolling shutter distortion. Even if you have a steady hand, the rolling shutter distortion will appear when you move quickly:</p>
+</blockquote>
+<p><strong>果冻效应</strong></p>
+<p>CMOS 图像传感器在成像时，利用「扫描线」每次收集芯片上的一行像素，从顶扫描到底约需几十毫秒。因此，任何一点运动都会可能出现成像扭曲，这被称为「卷帘快门失真」，看起来就像画面成了果冻。于是在拍摄运动视频时，即使你的手非常稳，但细微的抖动仍会出现果冻效应：</p>
+<p>&lt;视频&gt;</p>
+<p><em>A simulated rendering of a video with global (left) and rolling (right) shutter.</em></p>
+<p><em>用全局快门（左）和卷动快门（右）模拟渲染视频。</em></p>
+<blockquote>
+<p><strong>Focus Breathing</strong><br>When there are objects of varying distance in a video, the angle of view can change significantly due to objects “jumping” in and out of the foreground. As result, everything shrinks or expands like the video below, which professionals call “breathing”:</p>
+</blockquote>
+<p><strong>风箱效应</strong></p>
+<p>当视频中出现不同距离的物体时，由于物体「跃入」画面前景，随之视角则会发生显著的变化。结果，画面中所有物体都在缩小或扩大，就像下面的视频，我们形象的称其为「拉风箱」：</p>
+<blockquote>
+<p>A good stabilization system should address all of these issues: the video should look sharp, the motion should be smooth, and the rolling shutter and focus breathing should be corrected.</p>
+</blockquote>
+<p>所以一个好的稳定系统应该解决所有这些问题：视频画面应该清晰锐利，运动画面应该自然平滑，果冻效应和风箱效应都应被纠正。</p>
+<blockquote>
+<p>Many professionals mount the camera on a mechanical stabilizer to entirely isolate hand motion. These devices actively sense and compensate for the camera’s movement to remove all unwanted motions. However, they are usually expensive and cumbersome; you wouldn’t want to carry one every day. There are also handheld gimbal mounts available for mobile phones. However, they are usually larger than the phone itself, and you have to put the phone on it before start recording. You’d need to do it fast before the interesting moment vanishes.</p>
+</blockquote>
+<p>许多专业人士将相机安设在机械稳定装置上，以完全隔离手部的运动。这些装置会主动感应并补偿相机的移动，以抵消机身所有不必要的运动。但是，它们往往昂贵而繁琐，你不会想每天都带在身上。当然，也不乏手持式平衡底座。然而，它们通常都比手机还大，而且在开始录制之前还有先将手机放上去。这就要求你准备工作做的足够快，以免错失掉精彩瞬间。</p>
+<blockquote>
+<p>Optical Image Stabilization (OIS) is the most well-known method for suppression of handshake artifacts. Typically, in mobile camera modules with OIS, the lens is suspended in the middle of the module by a number of springs and electromagnets are used to move the lens within its enclosure. The lens module actively senses and compensates for handshake motion at very high speeds. Because OIS responds to motion rapidly, it can greatly suppress the handshake blur. However, the range of correctable motion is fairly limited (usually around 1-2 degrees), which is not enough to correct the unwanted motions between consecutive video frames, or to correct excessive motion blur during walking. Moveover, OIS cannot correct some kinds of motions, such as in-plane rotation. Sometimes it can even introduce a “jello” artifact:</p>
+</blockquote>
+<p>光学防抖 OIS 是最为人熟知排除手部抖动影响的解决方案。通常，在配备了 OIS 的移动设备相机模组中，镜头构件被悬挂在模组中部，构件周围则由弹簧和电磁体包裹。相机模组会主动感应，并且以非常高的速度补偿手部握持时所产生的动作，因此可以极大抑制拍摄时因手部抖动带来的运动模糊。然而，可校正的运动范围是相当有限的（通常只在 1～2 度左右），尚不足以规避连续视频帧之间，高频次移动产生的运动模糊。同样在「运动」上，OIS 也不能校正某些移动，譬如面对平面旋转时，OIS 甚至会给画面加入「果冻滤镜」：</p>
+<p>&lt;视频&gt;</p>
+<p><em>The video is taken by Pixel 2 with only OIS enabled. You can see the frame center is stabilized, but the boundaries have some jello-like artifacts.</em></p>
+<p><em>视频由 Pixel 2 拍摄，仅启用了 OIS 。 你可以看到画面中心是稳定的，但边缘物体则像果冻一般。</em></p>
+<blockquote>
+<p>Electronic Image Stabilization (EIS) analyzes the camera motion, filters out the unwanted parts, and synthesizes a new video by transforming each frame. The final stabilization quality depends on the algorithm design and implementation optimization of these stages. In general, software-based EIS is more flexible than OIS so it can correct larger and more kinds of motions. However, EIS has some common limitations. First, to prevent undefined regions in the synthesized frame, it needs to reduce the field of view or resolution. Second, compared to OIS or an external stabilizer, EIS requires more computation, which is a limited resource on mobile phones.</p>
+</blockquote>
+<p>电子防抖 EIS 是通过分析相机的运动，通过多帧合成过滤掉不必要的模糊部分，从而生成一个清晰的新视频。这项技术的实现质量，取决于当前阶段该技术的算法设计和优化程度。通常而言，基于软件的 EIS 会比 OIS 更加灵活，因此可以校正更多更繁的动作。但是，EIS 同样有一些无法避免的局限性。首先，为了防止合成帧中的未定义区域受到非正常处理，则需要降低画框视野和分辨率。其次，相较于与 OIS 构件或手持式稳定器，EIS 这种倚靠软件计算的解决方案，需要损耗更多手机有限的资源。</p>
+<blockquote>
+<p><strong>Making a Better Video: Fused Video Stabilization</strong><br>With Fused Video Stabilization, both OIS and EIS are enabled simultaneously during video recording to address all the issues mentioned above. Our solution has three processing stages as shown in the system diagram below. The first processing stage, motion analysis, extracts the gyroscope signal, the OIS motion, and other properties to estimate the camera motion precisely. Then, the motion filtering stage combines machine learning and signal processing to predict a person’s intention in moving the camera. Finally, in the frame synthesis stage, we model and remove the rolling shutter and focus breathing distortion. With Fused Video Stabilization, the videos from Pixel 2 have less motion blur and look more natural. The solution is efficient enough to run in all video modes, such as 60fps or 4K recording.</p>
+</blockquote>
+<p><strong>录制一个更好的视频：混合视频防抖</strong></p>
+<p>在混合防抖技术下，OIS 和 EIS 在相机工作中同时启用，可解决上述所有问题。这项解决方案有三个处理阶段，如下图所示。第一个处理阶段，运动分析，通过提取陀螺仪信号、OIS 运动轨迹和手机上其他属性，从而精确估计出相机的运动。然后，在分析相机运动的过滤阶段，将通过机器学习和信号处理，来预测人们移动相机的意图。最后，在多帧合成阶段通过数字建模，来移除果冻效应和风箱效应。借助混合防抖技术，由 Pixel 2 带来的视频，会极大降低运动模糊出现的可能，使画面看起来平顺自然。同样，该解决方案足以运用在 60fps 录制或 4K 高清录制下。</p>
+<p>&lt;图例&gt;</p>
+<blockquote>
+<p><strong>Motion Analysis</strong><br>In the motion analysis stage, we use the phone’s high-speed gyroscope to estimate the rotational component of the hand motion (roll, pitch, and yaw). By sensing the motion at 200 Hz, we have dense motion vectors for each scanline, enough to model the rolling shutter distortion. We also measure lens motions that are not sensed by the gyroscope, including both the focus adjustment (z) and the OIS movement (x and y) at high speed. Because we need high temporal precision to model the rolling shutter effect, we carefully optimize the system to ensure perfect timestamp alignment between the CMOS image sensor, the gyroscope, and the lens motion readouts. A misalignment of merely a few milliseconds can introduce noticeable jittering artifact:</p>
+</blockquote>
+<p><strong>运动分析</strong></p>
+<p>在运动分析阶段，借助手机的高速陀螺仪来分解估算手部运动（水平运动、垂直运动和圆周运动）。通过感测模组工作时 200 赫兹内的运动，记录下 CMOS 每条扫描线密集的运动矢量，这足以模拟卷帘快门失真带来的果冻效应。与此同时，我们还测量陀螺仪未检测到的镜头运动，高速调整包括 z 轴上的焦点运动以及 x 和 y 轴上的 OIS 记录的运动。由于需要极高的时间精度进行建模，所以我们仔细优化了系统，以确保 CMOS 与陀螺仪和镜头运动计数之间的完美时间校准。仅仅几毫秒的时间错位，就会引入明显的抖动现象。</p>
+<p>&lt;视频&gt;</p>
+<p><em>Left: The stabilized video of a “running” motion with a 3ms timing error. Note the occasional jittering. Right: The stabilized video with correct timestamps. The bottom right corner shows the original shaky video.</em></p>
+<p><em>左：包含 3 毫秒错误「运行」动作的稳定视频。注意偶尔的抖动。 右：带有正确时间戳的稳定视频。 右下角显示原始抖动的视频。</em></p>
+<blockquote>
+<p><strong>Motion Filtering</strong><br>The motion filtering stage takes the real camera motion from motion analysis and creates the stabilized virtual camera motion. Note that we push the incoming frames into a queue to defer the processing. This enables us to lookahead at future camera motions, using machine learning to accurately predict the user’s intention. Lookahead filtering is not feasible for OIS or any mechanical stabilizers, which can only react to previous or present motions. We will discuss more about this below. </p>
+</blockquote>
+<p><strong>运动过滤</strong></p>
+<p>在运动过滤阶段，通过从运动分析中获取真实的相机运动，创建稳定的虚拟相机运动轨迹。需要注意的是，为了给即将发生的相机运动轨迹模拟腾出时间，我们是将传入帧进行延迟处理的，这使得机器学习能够准确预测用户的意图。先行过滤对于 OIS ，或任何机械稳定器来说是不可行的，因为它们都只能对先前或当下发生的运动做出反应，当然这也是我们接下来研讨的内容。</p>
+<blockquote>
+<p><strong>Frame Synthesis</strong><br>At the final stage, we derive how the frame is transformed based on the real and virtual camera motions. To handle the rolling shutter distortion, we use multiple transformations for each frame. We split the the input frame into a mesh and warp each part separately:</p>
+</blockquote>
+<p><strong>多帧合成</strong></p>
+<p>在最后阶段，我们根据真实记录和虚拟计算的相机运动，推导出诸帧的合成框架。为了处理卷帘快门失真，我们对每一帧使用多重变换处理，并将合成框架分成网格，逐格处理：</p>
+<p>&lt;视频&gt;</p>
+<p><em>Left: The input video with mesh overlay. Right: The warped frame, and the red rectangle is the final stabilized output. Note how the non-rigid warping corrects the rolling shutter distortion.</em></p>
+<p><em>左：网格叠加的视频。 右：扭曲框架，红色的矩形是最终的稳定输出。 请注意非刚性翘曲如何校正卷帘快门失真。</em></p>
+<blockquote>
+<p><strong>Lookahead Motion Filtering</strong><br>One key feature in the Fused Video Stabilization is our new lookahead filtering algorithm. It analyzes future motions to recognize the user-intended motion patterns, and creates a smooth virtual camera motion. The lookahead filtering has multiple stages to incrementally improve the virtual camera motion for each frame. In the first step, a Gaussian filtering is applied on the real camera motions of both past and future to obtain a smoothed camera motion:</p>
+</blockquote>
+<p><strong>先行运动过滤</strong></p>
+<p>混合防抖技术中一个关键性特性，就是我们全新的「先行过滤算法」。它会分析即将发生的运动，以识别用户预期的运动模式，并创建一个平滑的虚拟相机运动轨迹。先行过滤以多阶段增量化，改进每一帧所模拟的虚拟运动。在第一步中，对已发生和将发生的真实相机运动，应用高斯滤波处理得到平滑的运动轨迹：</p>
+<p>&lt;视频&gt;</p>
+<p><em>Left: The input unstabilized video. Right: The smoothed result after Gaussian filtering.</em></p>
+<p><em>左：不稳定的视频。 右：高斯滤波后的平滑结果。</em></p>
+<blockquote>
+<p>You’ll notice that it’s still not very stable. To further improve the quality, we trained a model to extract intentional motions from the noisy real camera motions. We then apply additional filters given the predicted motion. For example, if we predict the camera is panning horizontally, we would reject more vertical motions. The result is shown below.</p>
+</blockquote>
+<p>你也许会注意到，它依然不是很稳定。为了进一步提升质量，我们训练了一个模型，从嘈杂的真实相机运动中提取实质性的轨迹，然后我们用额外的滤波器给予所预测的运动。例如，如果我们预测相机水平摇摄，算法便会拒绝更多的垂直运动。 结果如下所示。</p>
+<p>&lt;视频&gt;</p>
+<p><em>Left: The Gaussian filtered result. Right: Our lookahead result. We predict that the user is panning to the right, and suppress more vertical motions.</em></p>
+<p><em>左：高斯滤波结果。 右：我们的前瞻结果。 我们预测用户正在平移，并抑制更多的垂直运动。</em></p>
+<blockquote>
+<p>In practice, the process above does not guarantee there is no undefined “bad” regions, which can appear when the virtual camera is too stabilized and the warped frame falls outside the original field of view. We predict the likelihood of this issue in the next couple frames and adjust the virtual camera motion to get the final result.</p>
+</blockquote>
+<p>实际上，上述过程并不能保证不会出现未定义的「劣质画面」区域，当虚拟相机过于稳定，并且形变的帧落在原始视野之外事，这些区域就会出现。于是我们便会预测，在接下来的几帧中这个问题的可能性，并调整虚拟相机的运动，以获得最终结果。</p>
+<p>&lt;视频&gt;</p>
+<p><em>Left: Our lookahead result. The undefined area at the bottom-left are shown in cyan. Right: The final result with the bad region removed.</em></p>
+<p><em>左：我们的前瞻结果。 左下角的未定义区域以青色显示。 右：删除不良区域的最终结果。</em></p>
+<blockquote>
+<p>As we mentioned earlier, even with OIS enabled, sometimes the motions are too large and cause motion blur in a single frame. When EIS is further applied to further smooth the camera motion, the motion blur leads to distracting sharpness variations:</p>
+</blockquote>
+<p>正如我们前面提到的，即使启用了 OIS，有时运动幅度过大，也会导致单帧运动模糊。当进一步应用 EIS 进行平滑运动轨迹时，运动模糊会导致锐度的分散变化：</p>
+<p>&lt;视频&gt;</p>
+<p><em>Left: Pixel 2 with OIS only. Right: Pixel 2 with the basic Fused Video Stabilization. Note that sharpness variation around the “Exit” label.</em></p>
+<p><em>左：只开启 OIS 的 Pixel 2 。 右：Pixel 2 与混合防抖。 请注意，「Exit」标签周围的锐度变化。</em></p>
+<blockquote>
+<p>This is a very common problem in EIS solutions. To address this issue, we exploit the “masking” property in the human visual system. Motion blur usually blurs the frame along a specific direction, and if the overall frame motion follows that direction, the human eye will not notice it. Instead, our brain treats the blur as a natural part of the motion, and masks it away from our perception.</p>
+</blockquote>
+<p>这在 EIS 解决方案中是一个非常普遍的问题。为了解决这个问题，我们利用人类视觉系统中的「掩蔽」属性。运动模糊通常会使框架沿特定方向变模糊，但如果整个框架运动沿着该方向运动，人眼则很难注意到它。相反，我们的大脑将模糊视为动作的一个自然部分，并将其从我们的感知中屏蔽掉。</p>
+<blockquote>
+<p>With the high-frequency gyroscope and OIS signals, we can accurately estimate the motion blur for each frame. We compute where the camera pointed to at both the beginning and end of exposure, and the movement in-between is the motion blur. After that, we apply a machine learning algorithm (trained on a set of videos with and without motion blur) to map the motion blurs in past and future frames to the amount of real camera motion we want to keep, and blend the weighted real camera motion with the virtual one. As you can see below, with the motion blur masking, the distracting sharpness variation is greatly reduced and the camera motion is still stabilized.</p>
+</blockquote>
+<p>利用高频陀螺仪和 OIS 信号，可以准确地估计每帧的运动模糊。我们计算相机在曝光开始和结束时指向的位置，而中间的移动就是运动模糊。之后，我们应用一个机器学习算法（在一组有运动模糊和没有运动模糊的视频上进行训练），将过去和未来帧中的运动模糊，映射到我们想要保留的真实相机运动的量之上。正如你在以下视频看到的那样，通过运动模糊遮罩，分散的清晰度变化大大减少，摄像机运动仍然稳定。</p>
+<p>&lt;视频&gt;</p>
+<p><em>Left: Pixel 2 with the basic Fused Video Stabilization. Right: The full Fused Video Stabilization solution with motion blur masking.</em></p>
+<p><em>左：开启混合防抖的 Pixel 2 。 右：带有运动模糊遮罩的全局融合视频防抖解决方案。</em></p>
+<blockquote>
+<p><strong>Results</strong><br>We have seen many amazing videos from Pixel 2 with Fused Video Stabilization. Here are some for you to check out:</p>
+</blockquote>
+<p><strong>结尾</strong></p>
+<p>我们已经看到许多来自 Pixel 2 混合防抖技术下的亮眼视频。 这里有一些可供你查验：</p>
+<p>&lt;视频&gt;</p>
+<p><em>Videos taken by two Pixel 2 phones mounted on a single hand grip. Fused Video Stabilization is disabled in the left one.</em></p>
+<p><em>两部 Pixel 2 手机同时拍摄的视频。 混合防抖在左边禁用。</em></p>
+<p>&lt;视频&gt;</p>
+<p><em>Videos taken by two Pixel 2 phones mounting on a single hand grip. Fused Video Stabilization is disabled in the left one. Note that the videographer jumped together with the subject.</em></p>
+<p><em>两部 Pixel 2 手机同时拍摄的视频。  混合防抖在左边禁用。 请注意，拍摄者和被拍者是同时跳跃的。</em></p>
+<blockquote>
+<p>Fused Video Stabilization combines the best of OIS and EIS, shows great results in camera motion smoothing and motion blur reduction, and corrects both rolling shutter and focus breathing. With Fused Video Stabilization on the Pixel 2 and Pixel 2 XL, you no longer have to carefully place the phone before recording, hold it firmly over the entire recording session, or carry a gimbal mount everywhere. The recorded video will always be stable, sharp, and ready to share.</p>
+</blockquote>
+<p>混合防抖技术结合了 OIS 和 EIS 的优点，在平滑相机运动和减少运动模糊方面表现出色，并校正了果冻效应和风箱效应。借助 Pixel 2 和 Pixel 2 XL 上的混合防抖技术，你无需在录制之前仔细放置手机，在录制全程紧握手机，或者随身携带万向架。所录视频必将稳定如一，锐利依旧，随时欣赏，随时分享。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2017/12/24/%E2%80%9C%E6%96%87%E7%A8%BF%E7%BF%BB%E8%AF%91%E2%80%9D/" data-id="ckjpeikjd0013m94cdi0m93ze" data-title="文稿翻译" class="article-share-link">Teilen</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/12/31/Ciao-2017/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Neuer</strong>
+      <div class="article-nav-title">
+        
+          Ciao 2017
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/12/06/%E6%88%92%E7%83%9F%E5%B0%8F%E4%BA%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title">戒烟小事</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/01/05/Untitled/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/01/05/test-1/">test 1</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/24/%E4%BA%8C%E6%AC%A1%E5%85%AC%E8%B7%AF%E6%97%85%E8%A1%8C%E7%BA%AA/">二次公路旅行纪</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/20/%E5%A4%A7%E5%AE%9D%E8%B4%9D%E7%94%B7%E5%AD%A9/">大宝贝男孩</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/31/Ciao-2017/">Ciao 2017</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 Sizher<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
